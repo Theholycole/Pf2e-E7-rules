@@ -4,12 +4,37 @@
 import { MODULE_ID, DEFAULT_PRICES, DEFAULT_STRONG, accessBand, cap, featPrice, xpLabel } from "./prices.js";
 
 const TAB = "e7";
+
+// The cap's recommendations: the standard party against on-level foes (a level+2 boss, or four level−2 foes) at every level in the
+// combat simulator (lower damage taken = stronger), with the class ratings' spikes (how many of 25 classes are above their own average).
+// Strongest: 5, 3, 13, 7, 17. Weakest: 8–10, 12, 14, 16.
+const CAP_NOTES = {
+    3: "★ strong spike (early)",
+    5: "★ strongest spike: party and most classes at their best",
+    7: "★ strong spike, the E7 default (just before the 8th–10th dip)",
+    8: "▼ dip",
+    9: "▼ dip",
+    10: "▼ dip",
+    12: "▼ dip",
+    13: "★ strong spike (high level)",
+    14: "▼ dip",
+    16: "▼ dip",
+    17: "★ strong spike (very high level)"
+};
+const CAP_CHOICES = Object.fromEntries(Array.from({ length: 19 }, (_, i) => i + 2).map((level) => [level, CAP_NOTES[level] ? `${level} — ${CAP_NOTES[level]}` : String(level)]));
 const E7_PACK = `${MODULE_ID}.e7-feats`;
 const sluggify = (name) => game.pf2e?.system?.sluggify?.(name) ?? name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 Hooks.once("init", () => {
     const setting = (key, data) => game.settings.register(MODULE_ID, key, { scope: "world", config: true, ...data });
-    setting("capLevel", { name: "Level cap", hint: "Characters stop leveling here and spend XP on feats instead.", type: Number, default: 7 });
+    setting("capLevel", {
+        name: "Level cap",
+        hint: "Characters can't level past this; XP past the cap is spent on feats. ★ marks the levels where the simulator found the party strongest against on-level foes (and most classes at their best); ▼ marks a dip, where foes catch up.",
+        type: Number,
+        choices: CAP_CHOICES,
+        default: 7
+    });
+    setting("gmCanExceed", { name: "GM can level past the cap", hint: "Lets a GM raise a character's level past the cap (for NPC allies or tests).", type: Boolean, default: true });
     setting("requireCap", { name: "Only capped characters can spend XP", hint: "Characters below the cap level up with XP as normal.", type: Boolean, default: true });
     setting("prices", {
         name: "Feat prices (JSON)",
@@ -27,6 +52,17 @@ Hooks.once("ready", () => {
         console.error(`${MODULE_ID} | couldn't add the E7 Feats tab`, error);
         if (game.user.isGM) ui.notifications.warn("E7 Rules: couldn't add the E7 Feats tab to the compendium browser (has the PF2e system changed it?).");
     }
+});
+
+// --- The level cap: a character's level can't be raised past it ----------------------------------------------------------------
+
+Hooks.on("preUpdateActor", (actor, changes) => {
+    if (actor.type !== "character") return;
+    const level = foundry.utils.getProperty(changes, "system.details.level.value");
+    if (level == null || level <= cap() || level <= (actor.level ?? 0)) return;
+    if (game.user.isGM && game.settings.get(MODULE_ID, "gmCanExceed")) return;
+    foundry.utils.setProperty(changes, "system.details.level.value", Math.max(actor.level ?? 1, cap()));
+    ui.notifications.warn(`${actor.name} is at the E7 level cap (${cap()}). Spend XP on feats in the compendium browser's E7 Feats tab instead.`);
 });
 
 // --- The tab -----------------------------------------------------------------------------------------------------------------
