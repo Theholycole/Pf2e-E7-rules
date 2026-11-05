@@ -34,6 +34,13 @@ Hooks.once("init", () => {
         choices: CAP_CHOICES,
         default: 7
     });
+    setting("showTab", {
+        name: "Show the E7 Feats tab",
+        hint: "Shows the E7 Feats tab (and Buy with XP) in the compendium browser for everyone. Off until your campaign reaches the cap.",
+        type: Boolean,
+        default: false,
+        onChange: (value) => showTab(value)
+    });
     setting("gmCanExceed", { name: "GM can level past the cap", hint: "Lets a GM raise a character's level past the cap (for NPC allies or tests).", type: Boolean, default: true });
     setting("requireCap", { name: "Only capped characters can spend XP", hint: "Characters below the cap level up with XP as normal.", type: Boolean, default: true });
     setting("prices", {
@@ -108,12 +115,28 @@ function installTab() {
 
     const tab = new E7FeatTab(browser);
     browser.tabs[TAB] = tab;
-    // (Right after the Feats tab.)
-    const at = browser.tabsArray.indexOf(browser.tabs.feat);
-    browser.tabsArray.splice(at >= 0 ? at + 1 : browser.tabsArray.length, 0, tab);
-    browser.dataTabsList = [...browser.dataTabsList, TAB];
     if (browser.settings && !browser.settings[TAB]) browser.settings[TAB] = {};
     game.modules.get(MODULE_ID).api = { tab, buy, priceOf };
+    showTab(game.settings.get(MODULE_ID, "showTab"));
+}
+
+// The GM's toggle: the tab is in the browser's tab list (right after Feats) only while it's on. The browser reads its tab list when it
+// renders, so an open browser is closed to pick up the change.
+function showTab(show) {
+    const browser = game.pf2e?.compendiumBrowser;
+    const tab = browser?.tabs?.[TAB];
+    if (!tab) return;
+    const listed = browser.tabsArray.includes(tab);
+    if (show && !listed) {
+        const at = browser.tabsArray.indexOf(browser.tabs.feat);
+        browser.tabsArray.splice(at >= 0 ? at + 1 : browser.tabsArray.length, 0, tab);
+        browser.dataTabsList = [...browser.dataTabsList, TAB];
+    } else if (!show && listed) {
+        browser.tabsArray.splice(browser.tabsArray.indexOf(tab), 1);
+        browser.dataTabsList = browser.dataTabsList.filter((name) => name !== TAB);
+        if (browser.activeTabName === TAB) browser.activeTab = browser.tabs.feat;
+    } else return;
+    if (browser.rendered) browser.close();
 }
 
 // Each row of the E7 tab gets a Buy with XP button. The rows are Svelte's, keyed by the feat, so a row keeps its feat while the list
@@ -207,6 +230,7 @@ export function priceOf(item, actor) {
 }
 
 export async function buy(uuid) {
+    if (!game.settings.get(MODULE_ID, "showTab")) return ui.notifications.warn("The GM hasn't turned on E7 XP spending yet.");
     const actor = buyer();
     if (!actor) return ui.notifications.warn("Select your character's token, or assign a character to your user, to buy feats with XP.");
     if (!actor.isOwner) return ui.notifications.warn(`You don't own ${actor.name}.`);
