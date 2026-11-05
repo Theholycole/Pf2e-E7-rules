@@ -1,0 +1,53 @@
+{
+  "_id": "JxNNjiUnvH7TBtna",
+  "_key": "!items!JxNNjiUnvH7TBtna",
+  "name": "Something of an Expert (Saving Throw)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "something-of-an-expert-saving-throw",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Choose one saving throw in which you are trained. Increase that proficiency rank to expert. This feat does not provide further advancement from expert to master or legendary.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different save each time.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 3,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

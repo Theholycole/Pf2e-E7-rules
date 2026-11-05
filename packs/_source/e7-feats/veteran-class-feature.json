@@ -1,0 +1,62 @@
+{
+  "_id": "VfxoJ3vcDC1MoNyw",
+  "_key": "!items!VfxoJ3vcDC1MoNyw",
+  "name": "Veteran Class Feature",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "veteran-class-feature",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Veteran Hero"
+        },
+        {
+          "value": "your class grants the feature at 9th–11th level"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>You gain one class feature your class grants at 9th, 10th or 11th level, as if you were that level. It counts as that feature for prerequisites. A feature that only raises a proficiency needs GM approval.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different feature each time.</p><p><strong>Cost</strong> 500 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 500,
+      "requires": [
+        "veteran-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

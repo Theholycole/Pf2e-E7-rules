@@ -1,0 +1,53 @@
+{
+  "_id": "S3Wi0Ur8NHMeB78c",
+  "_key": "!items!S3Wi0Ur8NHMeB78c",
+  "name": "Expanded Spell Knowledge",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "expanded-spell-knowledge",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Learn spells with a combined rank-point cost of 3 (a cantrip costs 1/2). The spells must belong to a spell list available to you, can't be higher rank than you can normally cast, and can't be above 4th rank.</p><p><strong>Special</strong> You can select this feat multiple times.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

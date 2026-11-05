@@ -1,0 +1,53 @@
+{
+  "_id": "eJNUCnXSH9GnIDkP",
+  "_key": "!items!eJNUCnXSH9GnIDkP",
+  "name": "Something of an Expert (Attacks or Class DC)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "something-of-an-expert-attacks-or-class-dc",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Choose one attack proficiency (a weapon category or unarmed attacks) or your class DC, in which you are trained. Increase that proficiency rank to expert. Requires GM approval.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 4,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_id": "RsrSYezP3cOrOsWm",
+  "_key": "!items!RsrSYezP3cOrOsWm",
+  "name": "Ability Advancement (Key, Spellcaster)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "ability-advancement-key-spellcaster",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Ability Training for your key attribute"
+        },
+        {
+          "value": "your key attribute is your spellcasting attribute"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Increase your key attribute modifier by 1.</p><p><strong>Cost</strong> 300 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 300,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "_id": "1P2F7Y3F7QmtioLF",
+  "_key": "!items!1P2F7Y3F7QmtioLF",
+  "name": "Expert Spellcasting Advancement",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "expert-spellcasting-advancement",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Exceptional Hero"
+        },
+        {
+          "value": "the ability to cast 4th-rank spells from spell slots"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Gain one 5th-rank and one 6th-rank spell slot for your primary spellcasting class. Your proficiency doesn't change. New spells of 5th rank and higher must be earned as rewards.</p><p><strong>Cost</strong> 650 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 650,
+      "requires": [
+        "exceptional-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

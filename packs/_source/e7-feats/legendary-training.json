@@ -1,0 +1,62 @@
+{
+  "_id": "eghg4N0c1Ypal5Gu",
+  "_key": "!items!eghg4N0c1Ypal5Gu",
+  "name": "Legendary Training",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "legendary-training",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Exceptional Hero"
+        },
+        {
+          "value": "master in the chosen skill"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Your proficiency rank in one skill becomes legendary.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different skill each time.</p><p><strong>Cost</strong> 400 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 400,
+      "requires": [
+        "exceptional-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

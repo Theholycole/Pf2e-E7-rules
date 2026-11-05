@@ -1,0 +1,63 @@
+{
+  "_id": "NMFZwj8fobhEA5d9",
+  "_key": "!items!NMFZwj8fobhEA5d9",
+  "name": "Master Spellcasting Advancement",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "master-spellcasting-advancement",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "a Legendary Hero selection dedicated to this feat"
+        },
+        {
+          "value": "Expert Spellcasting Advancement"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Retain your 5th- and 6th-rank slots and gain one 7th-rank and one 8th-rank spell slot for your primary spellcasting class. New spells of 5th rank and higher must be earned as rewards.</p><p><strong>Cost</strong> 450 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 450,
+      "requires": [
+        "expert-spellcasting-advancement"
+      ],
+      "legendary": true
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

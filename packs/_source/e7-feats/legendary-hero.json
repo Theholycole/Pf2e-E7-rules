@@ -1,0 +1,59 @@
+{
+  "_id": "iay57nqVBohezWVk",
+  "_key": "!items!iay57nqVBohezWVk",
+  "name": "Legendary Hero",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "legendary-hero",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Exceptional Hero"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>This gives you access to <strong>one</strong> class feat of 16th level or higher, which you must buy separately. Select Legendary Hero again for each additional class feat of 16th level or higher. Master Spellcasting Advancement and Apex Spellcasting each use a Legendary Hero selection of their own.</p><p><strong>Special</strong> You can select this feat more than once.</p><p><strong>Cost</strong> 500 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 500,
+      "requires": [
+        "exceptional-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

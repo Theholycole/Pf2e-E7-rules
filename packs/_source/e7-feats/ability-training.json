@@ -1,0 +1,53 @@
+{
+  "_id": "b57YBIbPPduYd4m1",
+  "_key": "!items!b57YBIbPPduYd4m1",
+  "name": "Ability Training",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "ability-training",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Choose one attribute. You qualify for Ability Advancement with that attribute.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different attribute each time.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 6,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

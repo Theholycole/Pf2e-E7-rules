@@ -1,0 +1,53 @@
+{
+  "_id": "Mnv6L0zp8oVZe9En",
+  "_key": "!items!Mnv6L0zp8oVZe9En",
+  "name": "Something of an Expert (Armor)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "something-of-an-expert-armor",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Choose one armor category in which you are trained. Increase that proficiency rank to expert. Requires GM approval.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different category each time.</p><p><strong>Cost</strong> 500 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 4,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 500,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_id": "Tx36SmbptW3LrkHs",
+  "_key": "!items!Tx36SmbptW3LrkHs",
+  "name": "Ability Advancement (Key, Strength)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "ability-advancement-key-strength",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Ability Training (Strength)"
+        },
+        {
+          "value": "Strength is your key attribute"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Increase your Strength modifier by 1.</p><p><strong>Cost</strong> 1000 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 1000,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_id": "CjAP2nmMha6BCH6O",
+  "_key": "!items!CjAP2nmMha6BCH6O",
+  "name": "Ability Advancement (Key, Martial)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "ability-advancement-key-martial",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Ability Training for your key attribute"
+        },
+        {
+          "value": "your class attacks with Strikes"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Increase your key attribute modifier by 1. Use Ability Advancement (Key, Strength) instead when your key attribute is Strength.</p><p><strong>Cost</strong> 750 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 750,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

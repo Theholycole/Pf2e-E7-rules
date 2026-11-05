@@ -1,0 +1,59 @@
+{
+  "_id": "uz9Pxa29rwrAl3Mv",
+  "_key": "!items!uz9Pxa29rwrAl3Mv",
+  "name": "Master Spellcasting Proficiency",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "master-spellcasting-proficiency",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Master Spellcasting Advancement"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Your proficiency rank for spell attack modifiers and spell DCs increases to master.</p><p><strong>Cost</strong> 450 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 450,
+      "requires": [
+        "master-spellcasting-advancement"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

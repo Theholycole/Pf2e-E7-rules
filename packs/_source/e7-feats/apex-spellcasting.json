@@ -1,0 +1,63 @@
+{
+  "_id": "NEJnrkWnxeiUxvNQ",
+  "_key": "!items!NEJnrkWnxeiUxvNQ",
+  "name": "Apex Spellcasting",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "apex-spellcasting",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "a separate Legendary Hero selection dedicated to this feat"
+        },
+        {
+          "value": "Master Spellcasting Advancement"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Retain all slots from the previous advancements and gain one 9th-rank apex spell slot for your primary spellcasting class. You can learn only one 9th-rank spell, as a reward.</p><p><strong>Cost</strong> 400 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 400,
+      "requires": [
+        "master-spellcasting-advancement"
+      ],
+      "legendary": true
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

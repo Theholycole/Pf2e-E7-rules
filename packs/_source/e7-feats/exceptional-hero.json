@@ -1,0 +1,59 @@
+{
+  "_id": "lVn1ujSTc6nTyptv",
+  "_key": "!items!lVn1ujSTc6nTyptv",
+  "name": "Exceptional Hero",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "exceptional-hero",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Veteran Hero"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>You can select class feats of up to 15th level for which you otherwise qualify.</p><p><strong>Cost</strong> 500 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 500,
+      "requires": [
+        "veteran-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

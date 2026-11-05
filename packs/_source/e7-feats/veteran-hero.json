@@ -1,0 +1,53 @@
+{
+  "_id": "9z5Bf7YppT1swNqa",
+  "_key": "!items!9z5Bf7YppT1swNqa",
+  "name": "Veteran Hero",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "veteran-hero",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>You can select class feats of up to 10th level for which you otherwise qualify.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "X8oPcdDXBBscrUZG",
+  "_key": "!items!X8oPcdDXBBscrUZG",
+  "name": "Something of an Expert (Skill or Perception)",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "something-of-an-expert-skill-or-perception",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Choose one skill, or Perception, in which you are trained. Increase that proficiency rank to expert. This feat does not provide further advancement from expert to master or legendary.</p><p><strong>Special</strong> You can select this feat more than once, choosing a different proficiency each time.</p><p><strong>Cost</strong> 200 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 200,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

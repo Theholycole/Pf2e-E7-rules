@@ -1,0 +1,53 @@
+{
+  "_id": "YIZSmI0ajAlKwAuP",
+  "_key": "!items!YIZSmI0ajAlKwAuP",
+  "name": "Expanded Caster Stamina",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "expanded-caster-stamina",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": []
+    },
+    "description": {
+      "value": "<p>Gain additional spell slots with combined ranks of 4, such as one 4th-rank slot, two 2nd-rank slots, or one 3rd-rank and one 1st-rank slot. This feat can't grant a slot above 4th rank.</p><p><strong>Special</strong> You can select this feat multiple times.</p><p><strong>Cost</strong> 250 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 99,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 250,
+      "requires": []
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}
