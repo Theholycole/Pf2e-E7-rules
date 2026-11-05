@@ -1,0 +1,7 @@
+{
+  "name": "pf2e-e7-rules",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node tools/feats.mjs && node tools/build-packs.mjs" },
+  "devDependencies": { "classic-level": "^1.4.1" }
+}

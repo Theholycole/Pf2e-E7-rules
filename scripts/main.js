@@ -62,7 +62,7 @@ Hooks.on("preUpdateActor", (actor, changes) => {
     if (level == null || level <= cap() || level <= (actor.level ?? 0)) return;
     if (game.user.isGM && game.settings.get(MODULE_ID, "gmCanExceed")) return;
     foundry.utils.setProperty(changes, "system.details.level.value", Math.max(actor.level ?? 1, cap()));
-    ui.notifications.warn(`${actor.name} is at the E7 level cap (${cap()}). Spend XP on feats in the compendium browser's E7 Feats tab instead.`);
+    ui.notifications.warn(`${actor.name} can't level past the E7 level cap (${cap()}). Spend XP on feats in the compendium browser's E7 Feats tab instead.`);
 });
 
 // --- The tab -----------------------------------------------------------------------------------------------------------------
@@ -192,7 +192,7 @@ export function priceOf(item, actor) {
     // Prerequisites that name a feat: the character must have it.
     for (const { value } of item.system.prerequisites?.value ?? []) {
         const name = String(value ?? "").trim();
-        if (!name || !knownFeatNames().has(name.toLowerCase())) continue;
+        if (flags || !name || !knownFeatNames().has(name.toLowerCase())) continue;
         if (!feats.some((f) => f.name.toLowerCase() === name.toLowerCase())) problems.push(`needs ${name}`);
     }
     // Access feats: Veteran Hero to 10th, Exceptional Hero to 15th, a Legendary Hero selection for each feat of 16th level or higher.
@@ -220,8 +220,8 @@ export async function buy(uuid) {
     const reminder = prereqs.length ? `<p><em>Prerequisites:</em> ${prereqs.join("; ")}</p>` : "";
     const warning = problems.length ? `<p><strong>As GM, you're overriding:</strong> ${problems.join("; ")}.</p>` : "";
     const ok = await foundry.applications.api.DialogV2.confirm({
-        window: { title: "Buy with XP" },
-        content: `<p>Spend <strong>${xp} XP</strong> on <strong>${item.name}</strong> for ${actor.name}?</p><p>${actor.name} has ${have} XP; ${Math.max(0, have - xp)} left after.</p>${reminder}${warning}`
+        window: { title: `Buy with XP: ${actor.name}` },
+        content: `<p class="e7-buyer"><img src="${actor.img}" alt="" style="height:2.5em;vertical-align:middle;border:none"> Buying for <strong>${actor.name}</strong></p><p>Spend <strong>${xp} XP</strong> on <strong>${item.name}</strong> for ${actor.name}?</p><p>${actor.name} has ${have} XP; ${Math.max(0, have - xp)} left after.</p>${reminder}${warning}`
     });
     if (!ok) return;
     const source = item.toObject();

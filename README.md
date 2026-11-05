@@ -8,4 +8,4 @@ Cole's E7 home rule for Pathfinder 2e: characters stop leveling at 7th level, an
 
 Prices follow *E7 XP Costs — Draft v2*. The GM can change them in the module settings (JSON) along with the strong-feat list.
 
-Build the compendium: `node tools/feats.mjs && node tools/build-packs.mjs` (needs `classic-level`).
+Build the compendium before using a git checkout in Foundry: `npm install && npm run build` (packs/e7-feats is built, not tracked, so Foundry rewriting it never blocks a pull). Releases build it themselves.
