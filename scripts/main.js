@@ -108,7 +108,9 @@ function installTab() {
 
     const tab = new E7FeatTab(browser);
     browser.tabs[TAB] = tab;
-    browser.tabsArray.push(tab);
+    // (Right after the Feats tab.)
+    const at = browser.tabsArray.indexOf(browser.tabs.feat);
+    browser.tabsArray.splice(at >= 0 ? at + 1 : browser.tabsArray.length, 0, tab);
     browser.dataTabsList = [...browser.dataTabsList, TAB];
     if (browser.settings && !browser.settings[TAB]) browser.settings[TAB] = {};
     game.modules.get(MODULE_ID).api = { tab, buy, priceOf };
@@ -155,6 +157,15 @@ function buyer() {
     return selected[0] ?? (game.user.character?.type === "character" ? game.user.character : null);
 }
 
+// Every feat name in the loaded compendiums (from the browser's packs), lower-case: to tell a prerequisite that names a feat.
+let featNames = null;
+function knownFeatNames() {
+    if (featNames) return featNames;
+    featNames = new Set();
+    for (const pack of game.packs.filter((p) => p.documentName === "Item")) for (const e of pack.index) if (e.type === "feat") featNames.add(e.name.toLowerCase());
+    return featNames;
+}
+
 // A feat's price and what's in the way of buying it, for this actor.
 export function priceOf(item, actor) {
     const flags = item.flags?.[MODULE_ID] ?? null;
@@ -172,6 +183,18 @@ export function priceOf(item, actor) {
     const max = item.system.maxTakable ?? 1;
     if (owns(slug) >= max) problems.push(max === 1 ? `${actor.name} already has ${item.name}` : `${actor.name} already has ${item.name} ${max} times`);
     for (const required of flags?.requires ?? []) if (!owns(required)) problems.push(`needs ${required.replace(/-/g, " ")}`);
+    // A class feat is for its class (an archetype feat for anyone with the dedication, which its prerequisites name).
+    const traits = item.system.traits?.value ?? [];
+    const classTraits = traits.filter((t) => t in (CONFIG.PF2E.classTraits ?? {}));
+    if (!flags && item.system.category === "class" && !traits.includes("archetype") && classTraits.length && !classTraits.includes(actor.class?.slug)) {
+        problems.push(`${item.name} is a ${classTraits.join("/")} feat`);
+    }
+    // Prerequisites that name a feat: the character must have it.
+    for (const { value } of item.system.prerequisites?.value ?? []) {
+        const name = String(value ?? "").trim();
+        if (!name || !knownFeatNames().has(name.toLowerCase())) continue;
+        if (!feats.some((f) => f.name.toLowerCase() === name.toLowerCase())) problems.push(`needs ${name}`);
+    }
     // Access feats: Veteran Hero to 10th, Exceptional Hero to 15th, a Legendary Hero selection for each feat of 16th level or higher.
     const band = flags ? (flags.legendary ? "legendary" : null) : accessBand(level);
     if (band === "veteran" && !owns("veteran-hero")) problems.push("needs Veteran Hero");
@@ -193,10 +216,12 @@ export async function buy(uuid) {
     if (xp == null) return ui.notifications.warn(`${item.name} can't be bought with XP.`);
     const have = actor.system.details.xp.value;
     if (problems.length && !game.user.isGM) return ui.notifications.warn(`Can't buy ${item.name}: ${problems.join("; ")}.`);
+    const prereqs = (item.system.prerequisites?.value ?? []).map((p) => p.value).filter(Boolean);
+    const reminder = prereqs.length ? `<p><em>Prerequisites:</em> ${prereqs.join("; ")}</p>` : "";
     const warning = problems.length ? `<p><strong>As GM, you're overriding:</strong> ${problems.join("; ")}.</p>` : "";
     const ok = await foundry.applications.api.DialogV2.confirm({
         window: { title: "Buy with XP" },
-        content: `<p>Spend <strong>${xp} XP</strong> on <strong>${item.name}</strong> for ${actor.name}?</p><p>${actor.name} has ${have} XP; ${Math.max(0, have - xp)} left after.</p>${warning}`
+        content: `<p>Spend <strong>${xp} XP</strong> on <strong>${item.name}</strong> for ${actor.name}?</p><p>${actor.name} has ${have} XP; ${Math.max(0, have - xp)} left after.</p>${reminder}${warning}`
     });
     if (!ok) return;
     const source = item.toObject();
