@@ -1,0 +1,62 @@
+{
+  "_id": "Qce65A18Z4L0MJfd",
+  "_key": "!items!Qce65A18Z4L0MJfd",
+  "name": "Improved Weapon Proficiency",
+  "type": "feat",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "slug": "improved-weapon-proficiency",
+    "category": "general",
+    "level": {
+      "value": 7
+    },
+    "actionType": {
+      "value": "passive"
+    },
+    "actions": {
+      "value": null
+    },
+    "traits": {
+      "value": [
+        "general"
+      ],
+      "rarity": "uncommon",
+      "otherTags": [
+        "e7"
+      ]
+    },
+    "prerequisites": {
+      "value": [
+        {
+          "value": "Exceptional Hero"
+        },
+        {
+          "value": "trained in the chosen weapon"
+        }
+      ]
+    },
+    "description": {
+      "value": "<p>Choose one weapon (such as longsword) or one unarmed attack you're trained in. Your proficiency rank with it increases by one step, to a maximum of master. If you're already master with it, it becomes legendary instead.</p><p>This raises your weapon specialization damage with it as normal for the new rank.</p><p><strong>Cost</strong> 700 XP (E7)</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "E7 Home Rules",
+      "authors": "",
+      "license": "OGL",
+      "remaster": true
+    },
+    "maxTakable": 1,
+    "rules": []
+  },
+  "flags": {
+    "pf2e-e7-rules": {
+      "xp": 700,
+      "requires": [
+        "exceptional-hero"
+      ]
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}
