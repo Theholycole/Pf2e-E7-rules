@@ -206,6 +206,11 @@ export function priceOf(item, actor) {
     const max = item.system.maxTakable ?? 1;
     if (owns(slug) >= max) problems.push(max === 1 ? `${actor.name} already has ${item.name}` : `${actor.name} already has ${item.name} ${max} times`);
     for (const required of flags?.requires ?? []) if (!owns(required)) problems.push(`needs ${required.replace(/-/g, " ")}`);
+    // E7 balance rule (2026-11-12): a character benefits from only one Resiliency archetype feat (their HP-per-level limits are waived).
+    if (/-resiliency$/.test(slug)) {
+        const other = feats.find((f) => /-resiliency$/.test(f.slug ?? ""));
+        if (other) problems.push(`${actor.name} already has a Resiliency feat (${other.name}); E7 allows only one`);
+    }
     // A class feat is for its class (an archetype feat for anyone with the dedication, which its prerequisites name).
     const traits = item.system.traits?.value ?? [];
     const classTraits = traits.filter((t) => t in (CONFIG.PF2E.classTraits ?? {}));
